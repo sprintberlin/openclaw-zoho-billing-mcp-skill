@@ -1,0 +1,7 @@
+{
+  "name": "zoho-billing-mcp",
+  "version": "1.0.0",
+  "description": "Zoho Billing MCP setup Action catalog, profiles and endpoint guidance.",
+  "author": "SprintCX",
+  "license": "MIT"
+}

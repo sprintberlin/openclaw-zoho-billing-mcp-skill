@@ -1,0 +1,92 @@
+{
+  "version": 1,
+  "service": "billing",
+  "catalog": "actions.jsonl",
+  "profiles": {
+    "billing-readonly": {
+      "name": "Billing Read-only",
+      "description": "Conservative read-only selection for organization, customers, subscriptions, invoices and product catalog. Contains sensitive data reads; narrow further as needed.",
+      "actions": [
+        "List_all_Organizations",
+        "Get_an_Organization",
+        "List_all_Customers",
+        "Get_a_Customer",
+        "Get_a_Customer_by_Reference",
+        "List_all_Subscriptions",
+        "Get_a_Subscription",
+        "List_all_Notes_of_a_Subscription",
+        "List_Recent_Activities_of_a_Subscription",
+        "View_Scheduled_Changes_of_a_Subscription",
+        "List_all_Invoices",
+        "Get_an_Invoice",
+        "List_all_Payments",
+        "Get_a_Payment",
+        "List_all_Plans",
+        "Get_a_Plan",
+        "List_all_Addons",
+        "Get_an_Addon",
+        "List_all_Coupons",
+        "Get_a_Coupon",
+        "List_all_Products",
+        "Get_a_Product",
+        "List_all_Quotes",
+        "Get_a_Quote",
+        "List_all_Price_Lists",
+        "Get_a_Price_List",
+        "List_all_Items",
+        "Get_an_Item",
+        "List_all_Taxes",
+        "List_all_Contact_Persons",
+        "Get_a_Contact_Person"
+      ]
+    },
+    "billing-operations": {
+      "name": "Billing Operations",
+      "description": "Extends read-only with selected customer, subscription, quote, invoice and catalog writes; enable only per explicit task. Excludes payments, refunds, cancellation, void, deletion, bulk and external communication.",
+      "extends": "billing-readonly",
+      "actions": [
+        "Create_a_Customer",
+        "Update_a_Customer",
+        "Create_a_Contact_Person",
+        "Update_a_Contact_Person",
+        "Create_a_Subscription",
+        "Update_a_Subscription",
+        "Add_Subscription_Notes",
+        "Create_a_Quote",
+        "Update_a_Quote",
+        "Create_an_Invoice",
+        "Update_an_Invoice",
+        "Create_a_Product",
+        "Update_a_Product",
+        "Create_a_Plan",
+        "Update_a_Plan",
+        "Create_an_Addon",
+        "Update_an_Addon",
+        "Create_a_Coupon",
+        "Update_a_Coupon",
+        "Create_an_Item",
+        "Update_an_Item"
+      ]
+    }
+  },
+  "tasks": {
+    "invoice-inspection": {
+      "name": "Inspect an invoice",
+      "description": "Select these read Actions only if needed, then inspect live schemas before use.",
+      "actions": [
+        "List_all_Organizations",
+        "List_all_Invoices",
+        "Get_an_Invoice"
+      ]
+    },
+    "subscription-inspection": {
+      "name": "Inspect a subscription",
+      "description": "Select these read Actions only if needed, then inspect live schemas before use.",
+      "actions": [
+        "List_all_Organizations",
+        "List_all_Subscriptions",
+        "Get_a_Subscription"
+      ]
+    }
+  }
+}
